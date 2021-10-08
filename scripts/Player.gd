@@ -21,17 +21,18 @@ func _process(delta):
 	
 	var jump_pressed = Input.is_action_just_pressed("jump")
 	
-	if (_on_floor(delta) && jump_pressed):
+	if (jump_pressed && (_on_floor())):
 		velocity.y = jump_speed
-		
-	if (is_on_floor()):
-		air_time = 0
 	
 	if (velocity.y < 0 && !Input.is_action_pressed("jump")):
 		velocity.y += gravity * jump_termination_multiplier * delta
 	else:
 		velocity.y += gravity * delta
+	
+	var was_on_floor = is_on_floor()
 	velocity = move_and_slide(velocity, Vector2.UP)
+	if (was_on_floor && !is_on_floor() && !jump_pressed):
+		$CoyoteTimer.start()
 	
 	_update_animation(delta)
 
@@ -40,14 +41,13 @@ func _get_move_vector():
 	move_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	return move_vector
 
-func _on_floor(delta):
-	air_time += delta
-	return is_on_floor() || air_time < 0.2
+func _on_floor():
+	return is_on_floor() || !$CoyoteTimer.is_stopped()
 
 func _update_animation(delta):
 	var move_vector = _get_move_vector()
 	
-	if (!_on_floor(delta)):
+	if (!_on_floor()):
 		$AnimatedSprite.play("jump")
 	elif (move_vector.x != 0):
 		$AnimatedSprite.play("run")
