@@ -7,6 +7,7 @@ var horizontal_acceleration = 2000
 var jump_speed := -360
 var jump_termination_multiplier := 4
 var air_time := 0.0
+var has_double_jump := false
 
 func _ready():
 	pass
@@ -21,8 +22,14 @@ func _process(delta):
 	
 	var jump_pressed = Input.is_action_just_pressed("jump")
 	
-	if (jump_pressed && (_on_floor())):
+	if (_on_floor()):
+		has_double_jump = true
+	
+	if (jump_pressed && (_on_floor() || has_double_jump)):
 		velocity.y = jump_speed
+		if (!_on_floor()):
+			has_double_jump = false
+		$CoyoteTimer.stop()
 	
 	if (velocity.y < 0 && !Input.is_action_pressed("jump")):
 		velocity.y += gravity * jump_termination_multiplier * delta
