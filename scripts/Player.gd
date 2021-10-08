@@ -5,7 +5,7 @@ var velocity := Vector2.ZERO
 var max_horizontal_speed := 140
 var horizontal_acceleration = 2000
 var jump_speed := -360
-var jump_termination_multiplier := 3
+var jump_termination_multiplier := 4
 var air_time := 0.0
 
 func _ready():
