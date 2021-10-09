@@ -72,6 +72,12 @@ jump={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="PLAYER"
+2d_physics/layer_19="HAZARDS"
+2d_physics/layer_20="PICKUPS"
+
 [physics]
 
 common/enable_pause_aware_picking=true
