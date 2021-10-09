@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resources/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GameCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node"]
 
@@ -17,3 +18,59 @@ position = Vector2( -145.878, 71.8391 )
 
 [node name="GameCamera" parent="." instance=ExtResource( 3 )]
 background_color = Color( 0.87451, 0.964706, 0.960784, 1 )
+
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Coin" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( -54, -27 )
+
+[node name="Coin7" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 27, 9 )
+
+[node name="Coin8" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 54, 9 )
+
+[node name="Coin9" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 81, 9 )
+
+[node name="Coin10" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 108, 9 )
+
+[node name="Coin11" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 135, 9 )
+
+[node name="Coin12" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 162, 9 )
+
+[node name="Coin13" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 27, -9 )
+
+[node name="Coin14" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 54, -9 )
+
+[node name="Coin15" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 81, -9 )
+
+[node name="Coin16" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 108, -9 )
+
+[node name="Coin17" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 135, -9 )
+
+[node name="Coin18" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( 162, -9 )
+
+[node name="Coin2" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( -153, -117 )
+
+[node name="Coin6" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( -135, -117 )
+
+[node name="Coin3" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( -171, -117 )
+
+[node name="Coin4" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( -117, -63 )
+
+[node name="Coin5" parent="Collectibles" instance=ExtResource( 4 )]
+position = Vector2( -99, -63 )
