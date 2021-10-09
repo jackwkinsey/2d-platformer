@@ -41,7 +41,7 @@ func _process(delta):
 	if (was_on_floor && !is_on_floor() && !jump_pressed):
 		$CoyoteTimer.start()
 	
-	_update_animation(delta)
+	_update_animation()
 
 func _get_move_vector():
 	var move_vector = Vector2.ZERO
@@ -51,7 +51,7 @@ func _get_move_vector():
 func _on_floor():
 	return is_on_floor() || !$CoyoteTimer.is_stopped()
 
-func _update_animation(delta):
+func _update_animation():
 	var move_vector = _get_move_vector()
 	
 	if (!_on_floor()):
