@@ -13,7 +13,6 @@ var has_double_jump := false
 
 func _ready():
 	var err = $HazardArea.connect("area_entered", self, "on_hazard_area_entered")
-	
 	if err:
 		print("Error occurred: " + str(err))
 
@@ -71,4 +70,3 @@ func _update_animation():
 
 func on_hazard_area_entered(_area2d):
 	emit_signal("died")
-	print("DIE!")

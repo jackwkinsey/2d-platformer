@@ -74,7 +74,8 @@ jump={
 
 [layer_names]
 
-2d_physics/layer_1="PLAYER"
+2d_physics/layer_1="WORLD"
+2d_physics/layer_18="ENEMY_GOAL"
 2d_physics/layer_19="HAZARDS"
 2d_physics/layer_20="PICKUPS"
 

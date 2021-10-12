@@ -2,8 +2,8 @@ extends Node2D
 
 func _ready():
 	$AnimatedSprite.play("spin")
-	var err = $Area2D.connect("area_entered", self, "on_area_entered")
 	
+	var err = $Area2D.connect("area_entered", self, "on_area_entered")
 	if err:
 		print("Error occurred: " + str(err))
 
