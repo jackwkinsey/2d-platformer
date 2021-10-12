@@ -60,6 +60,7 @@ __meta__ = {
 
 [node name="PickupArea" type="Area2D" parent="."]
 position = Vector2( 0, -9 )
+collision_layer = 0
 collision_mask = 524288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
@@ -67,6 +68,7 @@ shape = SubResource( 3 )
 
 [node name="HazardArea" type="Area2D" parent="."]
 position = Vector2( 0, -7 )
+collision_layer = 0
 collision_mask = 262144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]

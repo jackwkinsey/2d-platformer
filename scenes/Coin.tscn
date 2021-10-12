@@ -84,6 +84,7 @@ anims/idle = SubResource( 3 )
 "collectible",
 ]]
 collision_layer = 524288
+collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
 }
